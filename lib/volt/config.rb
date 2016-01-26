@@ -55,8 +55,8 @@ else
 
         # The user can use any DB_KEY to assign a value into the database
         # config.
-        ENV.keys.grep(/^DB_/).each do |db_key|
-          db_opts[db_key.gsub(/^DB_/, '').downcase] = ENV[db_key]
+        ENV.keys.grep(/^DB_/i).each do |db_key|
+          db_opts[db_key.gsub(/^DB_/, '').downcase.to_sym] = ENV[db_key]
         end
 
         opts = {

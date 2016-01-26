@@ -6,16 +6,15 @@ gemspec
 # gem 'volt-mongo'
 gem 'volt-sql'
 
+# Database drivers for volt-sql
+gem 'sqlite3'
+#gem 'pg', '~> 0.18.2'
+#gem 'pg_json', '~> 0.1.29'
+
 # Use rbnacl for message bus encrpytion
 # (optional, if you don't need encryption, disable in app.rb and remove)
 gem 'rbnacl', require: false
 gem 'rbnacl-libsodium', require: false
-
-# temp until 0.8.0 of opal
-# gem 'opal-rspec', github: 'opal/opal-rspec'
-gem 'sqlite3'
-gem 'pg', '~> 0.18.2'
-gem 'pg_json', '~> 0.1.29'
 
 
 group :development, :test do
