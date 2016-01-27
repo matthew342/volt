@@ -7,7 +7,7 @@
 # Because of Opal issue , VoltTime could not be a subclass of ::Time
 
 class VoltTime
-  # Since VoltTime is required by the user, we don't add it to the FIELD_CASTS
+  # Since VoltTime is required by the user on the client, we don't add it to the FIELD_CASTS
   # list until after it is included, since we don't have access to the class
   # here.
   if defined?(Volt::FieldHelpers)

@@ -72,6 +72,7 @@ module Volt
 
         module ClassMethods
           # Gets the class for a model at the specified path.
+          # @param ['class_name'] Array of class names
           def class_at_path(path)
             if path
               # remove the _ and then singularize/pluralize
@@ -87,7 +88,6 @@ module Volt
               begin
                 # Lookup the class
                 klass = Object.const_get(klass_name)
-
                 # Use it if it is a model
                 return (klass < self ? klass : (klass = self))
               rescue NameError => e

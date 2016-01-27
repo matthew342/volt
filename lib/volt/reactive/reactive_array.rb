@@ -34,7 +34,7 @@ module Volt
       @array.empty?
     end
 
-    def count(&block)
+    def count(*args, &block)
       if block
         count = 0
 
