@@ -1,0 +1,9 @@
+# Contains gems needed for testing with mongo adapter
+
+source 'http://rubygems.org'
+
+gemspec path: '../'
+
+eval(File.read('gemfiles/common.rb'))
+
+gem 'volt-mongo', path: '../../volt-mongo'

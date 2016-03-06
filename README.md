@@ -61,6 +61,12 @@ Have a question and need help?  The volt team watches [stackoverflow](http://sta
 
 You want to contribute? Great! Thanks for being awesome! At the moment, we have a big internal todo list.  Please hop on https://gitter.im/voltrb/volt so that we don't duplicate work. Pull requests are always welcome, but asking about helping on Gitter should save some duplication.
 
+## Getting set up
+A couple of tips for getting set up:
+* Tests need to run in both Opal and native ruby. Do this by running the suite with `rake`.
+* Integration tests will only run if you set the `BROWSER` environment variable. Current options are `firefox` and `phantomjs`.
+* WWTD: In order to facilitate testing with multiple DB adapters, Volt uses (WWTD)[https://github.com/grosser/wwtd]. When you run the tests with `rake wwtd`, wwtd will run the suite with both volt-mongo and volt-sql.
+
 # Support
 
 VoltFramework is currently a labor of love mainly built by a small group of core developers.  Donations are always welcome and will help Volt get to production faster :-)  Also, if you or your company is interested in sponsoring Volt, please talk to @ryanstout in [gitter](https://gitter.im/voltrb/volt).

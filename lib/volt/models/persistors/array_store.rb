@@ -173,7 +173,6 @@ module Volt
         else
           query << args
         end
-
         # Make a new opts hash with changed query
         opts = opts.merge(query: query)
         Cursor.new([], opts)
@@ -212,11 +211,12 @@ module Volt
           load_data
         end
 
-        if @value.respond_to?(:has_value?) && @model.has_value? && (resval = self.resolved_value)
+        if @model.has_value?
           # Value is already there, return a resolved promise
-          return Promise.new.resolve(resval)
+          return Promise.new.resolve(@model.value)
         else
           # Otherwise generate a new promise and queue it for resolving
+          puts "Otherwise generate a new promise and queue it for resolving"
           promise = Promise.new
           resolve_promises << promise
 

@@ -3,6 +3,7 @@ require 'bundler/gem_tasks'
 require 'bundler/setup'
 require 'rubocop/rake_task'
 require 'opal'
+require 'wwtd/tasks'
 
 # Add our opal/ directory to the load path
 Opal.append_path(File.expand_path('../lib', __FILE__))

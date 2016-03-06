@@ -14,7 +14,9 @@ if RUBY_PLATFORM != 'opal'
       main = Volt::AssetFiles.new('/app', 'main', @component_paths)
 
       components = main.components
-      expect(components).to eq(%w(volt sql main shared bootstrap slideshow))
+      remainder = components - %w(volt main shared bootstrap slideshow)
+      expect(remainder.length).to eq 1
+      expect(['mongo', 'sql']).to include(remainder[0])
     end
 
     describe 'js files' do
