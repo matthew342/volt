@@ -110,9 +110,11 @@ class Promise
     end
 
     if error
-      if error.is_a?(RSpec::Expectations::ExpectationNotMetError)
-        # re-raise
-        raise error
+      if defined?(RSpec) && defined?(RSpec::Expectations::ExpectationNotMetError)
+        if error.is_a?(RSpec::Expectations::ExpectationNotMetError)
+          # re-raise
+          raise error
+        end
       end
       err_str = "Exception in Promise at .sync: #{error.inspect}"
       err_str += error.backtrace.join("\n") if error.respond_to?(:backtrace)
